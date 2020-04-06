@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,35 @@
 	<title>할인 가격 구하기</title>
 	<link rel="stylesheet" href="css/bargain.css">
 </head>
-<body>	
+
+<body>
 	<div id="contents">
 		<img src="images/sale.png">
 		<ul>
 			<li>
-					<label for="oPrice">원래 가격</label> 
-					<input type="text" id="oPrice">원
+				<label for="oPrice">원래 가격</label>
+				<input type="text" id="oPrice">원
 			</li>
 			<li>
 				<label for="rate">할인율</label>
 				<input type="text" id="rate">%
 			</li>
 			<li>
-					<button onclick="showPrice()">할인 가격 계산하기</button>
+				<button onclick="showPrice()">할인 가격 계산하기</button>
 			</li>
 		</ul>
-		<div id="showResult"></div>	
-	</div>	
+		<div id="showResult"></div>
+	</div>
+	<script>
+		function showPrice() {
+			var originalPrice = document.querySelector("#oPrice").value;
+			var rate = document.querySelector("#rate").value;
+			originalPrice != undefined && rate != undefined;
+			var ratedPrice = originalPrice * rate * (1 / 100);
+			var finalPrice = originalPrice - ratedPrice;
+			document.querySelector("#showResult").innerHTML = "가격은" + originalPrice + "원이고 할인율은" + rate + "원이고 할인율 적용하면" + ratedPrice + "원이고 최종금액은" + finalPrice + "원이다";
+		}
+	</script>
 </body>
+
 </html>
