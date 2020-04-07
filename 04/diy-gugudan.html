@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,19 @@
 	<title>구구단 연습</title>
 	<link rel="stylesheet" href="css/gugudan.css">
 </head>
+
 <body>
 	<h1>구구단</h1>
+	<script>
+		for (j = 2; j < 10; j++) {
+			document.write("<div>")
+			for (i = 1; i < 10; i++) {
+				document.write(j + 'X' + i + '=' + j * i + "<br>");
+			}
+			document.write("</div>")
+		}
 
+	</script>
 </body>
+
 </html>
